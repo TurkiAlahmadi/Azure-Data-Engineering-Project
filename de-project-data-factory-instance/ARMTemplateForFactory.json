@@ -76,7 +76,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
-								"value": "@activity('look_for_all_tables').output.value",
+								"value": "@activity('Look_for_All_Tables').output.value",
 								"type": "Expression"
 							},
 							"activities": [

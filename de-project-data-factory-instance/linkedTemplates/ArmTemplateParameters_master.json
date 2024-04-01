@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "de-project-data-factory-instance"
+		},
+		"AzureDataLakeStorage_accountKey": {
+			"value": ""
+		},
+		"ProjectDB_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=de-project-vm.database.windows.net;Initial Catalog=de-project-db;User ID=Turki"
+		},
+		"AzureDataLakeStorage_properties_typeProperties_url": {
+			"value": "https://deprojectdatalake2.dfs.core.windows.net/"
+		},
+		"AzureKeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://de-project-Keys.vault.azure.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

@@ -1,12 +1,20 @@
 {
 	"name": "ProjectDB",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=de-project-vm.database.windows.net;initial catalog=de-project-db;user id=Turki",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEQwMDEwMzlDLUM5MDItNDI4QS1BMzk1LUE2NEI2NDQ2ODFDRl9kZmQ2NDE4Yi1kZjg0LTQzNDktOGZmMS0zMDNiYzQ4MDE4N2EiDQp9"
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=de-project-vm.database.windows.net;Initial Catalog=de-project-db;User ID=Turki",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "password",
+				"secretVersion": "5ba90db0d7ff46029b9655b1826af8c6"
+			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }

@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "look_for_all_tables",
+				"name": "Look_for_All_Tables",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -15,6 +15,16 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT s.name AS SchemaName, t.name AS TableName\nFROM sys.tables t \nINNER JOIN sys.schemas s \nON t.schema_id = s.schema_id\nWHERE s.name = 'SalesLT'\n;",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "AzureSqlTable",
+						"type": "DatasetReference"
+					},
 					"firstRowOnly": false
 				}
 			},
@@ -23,7 +33,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "look_for_all_tables",
+						"activity": "Look_for_All_Tables",
 						"dependencyConditions": [
 							"Succeeded"
 						]

@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "de-project"
+		},
+		"ServerlessSQLDB_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=de-project-ondemand.sql.azuresynapse.net;Initial Catalog=gold_db"
+		},
+		"de-project-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:de-project.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"de-project-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://deprojectdatalake2.dfs.core.windows.net"
+		}
+	}
+}

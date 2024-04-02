@@ -1,0 +1,9 @@
+{
+	"name": "de-project-data-factory-instance",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b3804324-d073-4f22-b0ce-b26d42fb843e",
+		"tenantId": "c7e438db-e462-4c22-a90a-c358b16980b3"
+	}
+}

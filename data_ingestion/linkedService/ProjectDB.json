@@ -1,0 +1,20 @@
+{
+	"name": "ProjectDB",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=de-project-vm.database.windows.net;Initial Catalog=de-project-db;User ID=Turki",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "password",
+				"secretVersion": "5ba90db0d7ff46029b9655b1826af8c6"
+			}
+		}
+	}
+}

@@ -2,7 +2,7 @@
 	"name": "create_view_procedure",
 	"properties": {
 		"content": {
-			"query": "USE gold_db\nGO \n\nCREATE OR ALTER PROC CreateViewGold @ViewName nvarchar(100)\nAS \nBEGIN \n\nDECLARE @statement VARCHAR(MAX)\n    SET @statement = N'CREATE OR ALTER VIEW ' + @ViewName + ' AS\n    SELECT *\n    FROM\n        OPENROWSET(\n        BULK \"https://deprojectdatalake2.dfs.core.windows.net/gold/SalesLT/\"' + @ViewName + '/,\n        FORMAT = \"DELTA\"\n    ) AS [result]'\nEXEC (@statement)\n\nEND \nGO",
+			"query": "USE gold_db\nGO \n\nCREATE OR ALTER PROC CreateViewGold @ViewName nvarchar(100)\nAS \nBEGIN \n\nDECLARE @statement VARCHAR(MAX)\n    SET @statement = N'CREATE OR ALTER VIEW ' + @ViewName + ' AS\n    SELECT *\n    FROM\n        OPENROWSET(\n        BULK ''https://deprojectdatalake2.dfs.core.windows.net/gold/SalesLT/' + @ViewName + '/'',\n        FORMAT = ''DELTA''\n    ) AS [result]'\nEXEC (@statement)\n\nEND \nGO",
 			"metadata": {
 				"language": "sql"
 			},
